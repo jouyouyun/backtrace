@@ -9,5 +9,4 @@ fi
 
 tar -xf backtrace.tar.gz
 rm backtrace.tar.gz
-mv backtrace /usr/bin/
-backtrace
+sudo ./backtrace
