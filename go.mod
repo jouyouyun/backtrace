@@ -4,8 +4,8 @@ go 1.18
 
 require (
 	github.com/fatih/color v1.13.0
-	github.com/pkg/errors v0.9.1
 	golang.org/x/net v0.0.0-20220524220425-1d687d428aca
+	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (

@@ -1,0 +1,94 @@
+homepage: "项目地址：github.com/jouyouyun/backtrace"
+title: "正在测试路由..."
+timeout: 30
+ip_list:
+  -
+    ip: "219.141.136.12"
+    name: "北京电信"
+    type: "mainland"
+  -
+    ip: "202.106.50.1"
+    name: "北京联通"
+    type: "mainland"
+  -
+    ip: "221.179.155.161"
+    name: "北京移动"
+    type: "mainland"
+  -
+    ip: "202.96.209.133"
+    name: "上海电信"
+    type: "mainland"
+  -
+    ip: "210.22.97.1"
+    name: "上海联通"
+    type: "mainland"
+  -
+    ip: "211.136.112.200"
+    name: "上海移动"
+    type: "mainland"
+  -
+    ip: "58.60.188.222"
+    name: "广州电信"
+    type: "mainland"
+  -
+    ip: "210.21.196.6"
+    name: "广州联通"
+    type: "mainland"
+  -
+    ip: "120.196.165.24"
+    name: "广州移动"
+    type: "mainland"
+  -
+    ip: "61.139.2.69"
+    name: "成都电信"
+    type: "mainland"
+  -
+    ip: "119.6.6.6"
+    name: "成都联通"
+    type: "mainland"
+  -
+    ip: "211.137.96.205"
+    name: "成都移动"
+    type: "mainland"
+  -
+    ip: "154.204.56.254"
+    name: "野草云 HK BGP"
+    type: "idc"
+  -
+    ip: "193.134.211.254"
+    name: "野草云 HK CTGNet+BGP"
+    type: "idc"
+  -
+    ip: "45.205.1.225"
+    name: "UUUVPS SanJose CN2"
+    type: "idc"
+  -
+    ip: "45.9.10.146"
+    name: "AkkoCloud SanJose CN2 GIA"
+    type: "idc"
+  -
+    ip: "185.217.110.10"
+    name: "AkkoCloud London CN2 GIA"
+    type: "idc"
+asn_list:
+  -
+    asn: "AS4134"
+    name: "电信163 [普通线路]"
+  -
+    asn: "AS4809"
+    name: "电信CN2 [优质线路]"
+  -
+    asn: "AS23764"
+    name: "电信CTGNet [优质线路]"
+  -
+    asn: "AS4837"
+    name: "联通4837[普通线路]"
+  -
+    asn: "AS9929"
+    name: "联通9929[优质线路]"
+  -
+    asn: "AS9808"
+    name: "移动CMI [普通线路]"
+  -
+    asn: "AS58453"
+    name: "移动CMI [普通线路]"

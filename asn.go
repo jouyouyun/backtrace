@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/fatih/color"
 	"net"
 	"strings"
+
+	"github.com/fatih/color"
 )
 
 type Result struct {
@@ -28,31 +29,39 @@ func trace(ch chan Result, i int) {
 		return
 	}
 
+	ipASN := ""
 	for _, h := range hops {
 		for _, n := range h.Nodes {
 			asn := ipAsn(n.IP.String())
 			if asn == "" {
 				continue
-			} else {
-				as := m[asn]
-				cai := i % 6
-				c := color.New(ca[cai]).Add(color.Bold).SprintFunc()
-				s := fmt.Sprintf("%v %-15s %-23s", rName[i], rIp[i], c(as))
-				ch <- Result{i, s}
-				return
+			}
+
+			as := m[asn]
+			cai := i % 6
+			c := color.New(ca[cai]).Add(color.Bold).SprintFunc()
+			ipASN = fmt.Sprintf("[%s]\t %-15s\t %-23s", rName[i], rIp[i], c(as))
+			if *useFirstHop == "yes" {
+				goto out
 			}
 		}
 	}
 
-	s := fmt.Sprintf("%v %-15s %v", rName[i], rIp[i], "测试超时")
-	ch <- Result{i, s}
+out:
+	if len(ipASN) == 0 {
+		ipASN = fmt.Sprintf("[%s]\t %-15s\t %-23s", rName[i], rIp[i], "测试超时")
+	}
+	ch <- Result{i, ipASN}
 }
 
+// IP Prefix Query, such as: https://bgp.he.net/AS23764
 func ipAsn(ip string) string {
 
 	switch {
 	case strings.HasPrefix(ip, "59.43"):
 		return "AS4809"
+	case strings.HasPrefix(ip, "69.194") || strings.HasPrefix(ip, "203.25"):
+		return "AS23764"
 	case strings.HasPrefix(ip, "202.97"):
 		return "AS4134"
 	case strings.HasPrefix(ip, "218.105") || strings.HasPrefix(ip, "210.51"):
